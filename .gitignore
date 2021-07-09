@@ -1,0 +1,19 @@
+.DS_Store
+.vs
+
+# grpc_server
+grpc_server/bin/*
+
+# unity
+unity/Library
+unity/Logs
+unity/obj
+unity/Temp
+
+# plugins with large files
+unity/Assets/Plugins/Google.Protobuf
+unity/Assets/Plugins/Grpc.Core
+unity/Assets/Plugins/Grpc.Core.Api
+unity/Assets/Plugins/System.Buffers
+unity/Assets/Plugins/System.Memory
+unity/Assets/Plugins/System.Runtime.CompilerServices.Unsafe
