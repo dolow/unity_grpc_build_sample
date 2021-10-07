@@ -1,5 +1,6 @@
 ﻿using System.IO;
 using System.Net.Http;
+using System.Net.Security;
 using System.Security.Cryptography.X509Certificates;
 using Grpc.Net.Client;
 using Helloworld;
@@ -25,20 +26,28 @@ public class GrpcTest : MonoBehaviour
         string keyPath = System.IO.Path.Combine(Application.streamingAssetsPath, "192.168.11.9-key.pem");
         string caPath = System.IO.Path.Combine(Application.streamingAssetsPath, "rootCA.pem");
 
-        /*
+        
         HttpClientHandler handler = new HttpClientHandler();
+        handler.ServerCertificateCustomValidationCallback = (HttpRequestMessage request, X509Certificate2 certificate, X509Chain certificateChain, SslPolicyErrors policy) => {
+            return true;
+        };
         handler.ClientCertificates.Add(new X509Certificate2(certPath));
         using HttpClient httpClient = new HttpClient(handler);
+        GrpcChannelOptions option = new GrpcChannelOptions();
         GrpcChannel channel = GrpcChannel.ForAddress("https://192.168.11.9:50051", new GrpcChannelOptions
         {
             HttpClient = httpClient
+            //HttpHandler = new Grpc.Net.Client.Web.GrpcWebHandler(handler)
         });
-        */
+        
+        /*
         Grpc.Core.SslCredentials credentials = new Grpc.Core.SslCredentials(
             File.ReadAllText(caPath),
             new Grpc.Core.KeyCertificatePair(File.ReadAllText(certPath), File.ReadAllText(keyPath))
         );
         Grpc.Core.Channel channel = new Grpc.Core.Channel("192.168.11.9:50051", credentials);
+        */
+
         Greeter.GreeterClient client = new Greeter.GreeterClient(channel);
         
         string log = "";

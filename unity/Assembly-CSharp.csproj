@@ -310,20 +310,20 @@
     <Reference Include="Google.Protobuf">
       <HintPath>Assets/Plugins/Google.Protobuf/lib/net45/Google.Protobuf.dll</HintPath>
     </Reference>
+    <Reference Include="Grpc.Net.Common">
+      <HintPath>Assets/Plugins/Grpc.Net.Common/Grpc.Net.Common.dll</HintPath>
+    </Reference>
     <Reference Include="System.Buffers">
       <HintPath>Assets/Plugins/System.Buffers/lib/net45/System.Buffers.dll</HintPath>
-    </Reference>
-    <Reference Include="Grpc.Core.Api">
-      <HintPath>Assets/Plugins/Grpc.Core.Api/lib/net45/Grpc.Core.Api.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.Extensions.Logging.Abstractions">
       <HintPath>Assets/Plugins/Microsoft.Extensions.Logging.Abstractions/netstandard2.0/Microsoft.Extensions.Logging.Abstractions.dll</HintPath>
     </Reference>
-    <Reference Include="Grpc.Net.Common">
-      <HintPath>Assets/Plugins/Grpc.Net.Common/Grpc.Net.Common.dll</HintPath>
-    </Reference>
     <Reference Include="System.Diagnostics.DiagnosticSource">
       <HintPath>Assets/Plugins/System.Diagnostics.DiagnosticSource/System.Diagnostics.DiagnosticSource.dll</HintPath>
+    </Reference>
+    <Reference Include="Grpc.Core.Api">
+      <HintPath>Assets/Plugins/Grpc.Core.Api/lib/net45/Grpc.Core.Api.dll</HintPath>
     </Reference>
     <Reference Include="UnityEditor.iOS.Extensions.Xcode">
       <HintPath>/Applications/Unity/Hub/Editor/2021.2.0b14/PlaybackEngines/iOSSupport/UnityEditor.iOS.Extensions.Xcode.dll</HintPath>
