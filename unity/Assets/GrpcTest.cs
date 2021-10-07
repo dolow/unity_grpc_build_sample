@@ -1,8 +1,7 @@
-﻿using System;
-using System.Collections;
-using System.Collections.Generic;
-using System.Threading.Tasks;
-using Grpc.Core;
+﻿using System.IO;
+using System.Net.Http;
+using System.Security.Cryptography.X509Certificates;
+using Grpc.Net.Client;
 using Helloworld;
 using UnityEngine;
 
@@ -20,45 +19,58 @@ public class GrpcTest : MonoBehaviour
     // Can be run from commandline.
     // Example command:
     // "/Applications/Unity/Unity.app/Contents/MacOS/Unity -quit -batchmode -nographics -executeMethod HelloWorldTest.RunHelloWorld -logfile"
-    public static string RunHelloWorld()
+    public string RunHelloWorld()
     {
-        Application.SetStackTraceLogType(LogType.Log, StackTraceLogType.None);
+        string certPath = System.IO.Path.Combine(Application.streamingAssetsPath, "192.168.11.9.pem");
+        string keyPath = System.IO.Path.Combine(Application.streamingAssetsPath, "192.168.11.9-key.pem");
+        string caPath = System.IO.Path.Combine(Application.streamingAssetsPath, "rootCA.pem");
 
-        Debug.Log("==============================================================");
-        Debug.Log("Starting tests");
-        Debug.Log("==============================================================");
+        /*
+        HttpClientHandler handler = new HttpClientHandler();
+        handler.ClientCertificates.Add(new X509Certificate2(certPath));
+        using HttpClient httpClient = new HttpClient(handler);
+        GrpcChannel channel = GrpcChannel.ForAddress("https://192.168.11.9:50051", new GrpcChannelOptions
+        {
+            HttpClient = httpClient
+        });
+        */
+        Grpc.Core.SslCredentials credentials = new Grpc.Core.SslCredentials(
+            File.ReadAllText(caPath),
+            new Grpc.Core.KeyCertificatePair(File.ReadAllText(certPath), File.ReadAllText(keyPath))
+        );
+        Grpc.Core.Channel channel = new Grpc.Core.Channel("192.168.11.9:50051", credentials);
+        Greeter.GreeterClient client = new Greeter.GreeterClient(channel);
+        
+        string log = "";
+        string line = "";
 
-        Debug.Log("Application.platform: " + Application.platform);
-        Debug.Log("Environment.OSVersion: " + Environment.OSVersion);
+        HelloReply reply = client.SayHello(new HelloRequest { Name = "Unity" });
+        line = "HelloReply: " + reply.Message;
+        Debug.Log(line);
+        log += line + "\n";
+        Debug.Log("3");
+        HelloEnumReply replyEnum = client.SayHelloEnum(new HelloEnumRequest { Enum = HelloEnum.One });
+        line = "HelloEnumReply: " + replyEnum.Enum;
+        Debug.Log(line);
+        log += line + "\n";
 
-        var reply = Greet("Unity");
-        Debug.Log("Greeting: " + reply.Message);
+        HelloOneOfRequest reqFirst = new HelloOneOfRequest();
+        reqFirst.First = "first value";
+        HelloOneOfReply replyOneOfFirst = client.SayHelloOneOf(reqFirst);
+        line = "HelloOneOfReply: " + replyOneOfFirst.First;
+        Debug.Log(line);
+        log += line + "\n";
 
-        Debug.Log("==============================================================");
-        Debug.Log("Tests finished successfully.");
-        Debug.Log("==============================================================");
+        HelloOneOfRequest reqSecond = new HelloOneOfRequest();
+        reqSecond.Second = 32;
+        HelloOneOfReply replyOneOfSecond = client.SayHelloOneOf(reqSecond);
+        line = "HelloOneOfReply: " + replyOneOfSecond.Second;
+        Debug.Log(line);
+        log += line + "\n";
 
-        return reply.Message;
-    }
-
-    public static HelloReply Greet(string greeting)
-    {
-        Channel channel = new Channel("192.168.11.9:50051", ChannelCredentials.Insecure);
-
-        var client = new Greeter.GreeterClient(channel);
-        var reply = client.SayHello(new HelloRequest { Name = greeting });
 
         channel.ShutdownAsync().Wait();
 
-        return reply;
-    }
-
-    class GreeterImpl : Greeter.GreeterBase
-    {
-        // Server side handler of the SayHello RPC
-        public override Task<HelloReply> SayHello(HelloRequest request, ServerCallContext context)
-        {
-            return Task.FromResult(new HelloReply { Message = "Hello " + request.Name });
-        }
+        return log;
     }
 }

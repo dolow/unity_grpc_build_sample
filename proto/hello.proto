@@ -8,6 +8,8 @@ package helloworld;
 service Greeter {
   // Sends a greeting
   rpc SayHello (HelloRequest) returns (HelloReply) {}
+  rpc SayHelloEnum (HelloEnumRequest) returns (HelloEnumReply) {}
+  rpc SayHelloOneOf (HelloOneOfRequest) returns (HelloOneOfReply) {}
 }
 
 // The request message containing the user's name.
@@ -18,4 +20,34 @@ message HelloRequest {
 // The response message containing the greetings
 message HelloReply {
   string message = 1;
+}
+
+enum HelloEnum {
+  ZERO = 0;
+  ONE = 1;
+  TWO = 2;
+  THREE = 3;
+}
+
+message HelloEnumRequest {
+  HelloEnum enum = 1;
+}
+
+message HelloEnumReply {
+  HelloEnum enum = 1;
+}
+
+
+message HelloOneOfRequest {
+  oneof choose {
+    string first = 1;
+    int32 second = 2;
+  }
+}
+
+message HelloOneOfReply {
+  oneof choose {
+    string first = 1;
+    int32 second = 2;
+  }
 }
