@@ -301,14 +301,14 @@
     <Reference Include="System.Runtime.CompilerServices.Unsafe">
       <HintPath>Assets/Plugins/System.Runtime.CompilerServices.Unsafe/lib/net45/System.Runtime.CompilerServices.Unsafe.dll</HintPath>
     </Reference>
-    <Reference Include="System.Memory">
-      <HintPath>Assets/Plugins/System.Memory/lib/net45/System.Memory.dll</HintPath>
-    </Reference>
     <Reference Include="Grpc.Net.Client">
       <HintPath>Assets/Plugins/Grpc.Net.Client/lib/netstandard2.1/Grpc.Net.Client.dll</HintPath>
     </Reference>
     <Reference Include="Google.Protobuf">
       <HintPath>Assets/Plugins/Google.Protobuf/lib/net45/Google.Protobuf.dll</HintPath>
+    </Reference>
+    <Reference Include="Grpc.Net.Client.Web">
+      <HintPath>Assets/Plugins/Grpc.Net.Client.Web/Grpc.Net.Client.Web.dll</HintPath>
     </Reference>
     <Reference Include="Grpc.Net.Common">
       <HintPath>Assets/Plugins/Grpc.Net.Common/Grpc.Net.Common.dll</HintPath>
