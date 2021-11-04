@@ -7,6 +7,7 @@ import (
 	"fmt"
 	"log"
 	"net"
+	"os"
 
 	"google.golang.org/grpc"
 	"google.golang.org/grpc/credentials"
@@ -27,7 +28,7 @@ type helloServer struct {
 // GreeterhelloServer implements
 func (s *helloServer) SayHello(ctx context.Context, in *hello.HelloRequest) (*hello.HelloReply, error) {
 	log.Printf("SayHello Received: %v", in.GetName())
-	return &hello.HelloReply{Message: fmt.Sprintf("Hello %s", in.GetName())}, nil
+	return &hello.HelloReply{Message: fmt.Sprintf("Hello %s", in.GetName()), Status: "ok"}, nil
 }
 
 func (s *helloServer) SayHelloEnum(ctx context.Context, in *hello.HelloEnumRequest) (*hello.HelloEnumReply, error) {

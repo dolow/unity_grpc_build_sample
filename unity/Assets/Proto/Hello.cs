@@ -24,26 +24,26 @@ namespace Helloworld {
     static HelloReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "ChFwcm90by9oZWxsby5wcm90bxIKaGVsbG93b3JsZCIcCgxIZWxsb1JlcXVl",
-            "c3QSDAoEbmFtZRgBIAEoCSIdCgpIZWxsb1JlcGx5Eg8KB21lc3NhZ2UYASAB",
-            "KAkiNwoQSGVsbG9FbnVtUmVxdWVzdBIjCgRlbnVtGAEgASgOMhUuaGVsbG93",
-            "b3JsZC5IZWxsb0VudW0iNQoOSGVsbG9FbnVtUmVwbHkSIwoEZW51bRgBIAEo",
-            "DjIVLmhlbGxvd29ybGQuSGVsbG9FbnVtIkAKEUhlbGxvT25lT2ZSZXF1ZXN0",
-            "Eg8KBWZpcnN0GAEgASgJSAASEAoGc2Vjb25kGAIgASgFSABCCAoGY2hvb3Nl",
-            "Ij4KD0hlbGxvT25lT2ZSZXBseRIPCgVmaXJzdBgBIAEoCUgAEhAKBnNlY29u",
-            "ZBgCIAEoBUgAQggKBmNob29zZSoyCglIZWxsb0VudW0SCAoEWkVSTxAAEgcK",
-            "A09ORRABEgcKA1RXTxACEgkKBVRIUkVFEAMy4wEKB0dyZWV0ZXISPgoIU2F5",
-            "SGVsbG8SGC5oZWxsb3dvcmxkLkhlbGxvUmVxdWVzdBoWLmhlbGxvd29ybGQu",
-            "SGVsbG9SZXBseSIAEkoKDFNheUhlbGxvRW51bRIcLmhlbGxvd29ybGQuSGVs",
-            "bG9FbnVtUmVxdWVzdBoaLmhlbGxvd29ybGQuSGVsbG9FbnVtUmVwbHkiABJM",
-            "CgxTYXlIZWxsb09uT2YSHS5oZWxsb3dvcmxkLkhlbGxvT25lT2ZSZXF1ZXN0",
-            "GhsuaGVsbG93b3JsZC5IZWxsb09uZU9mUmVwbHkiAEINWgtoZWxsby9oZWxs",
-            "b2IGcHJvdG8z"));
+            "ChFwcm90by9oZWxsby5wcm90bxIKaGVsbG93b3JsZCItCgxIZWxsb1JlcXVl",
+            "c3QSDAoEbmFtZRgBIAEoCRIPCgdhZGRyZXNzGAIgASgJIi0KCkhlbGxvUmVw",
+            "bHkSDwoHbWVzc2FnZRgBIAEoCRIOCgZzdGF0dXMYAiABKAkiNwoQSGVsbG9F",
+            "bnVtUmVxdWVzdBIjCgRlbnVtGAEgASgOMhUuaGVsbG93b3JsZC5IZWxsb0Vu",
+            "dW0iNQoOSGVsbG9FbnVtUmVwbHkSIwoEZW51bRgBIAEoDjIVLmhlbGxvd29y",
+            "bGQuSGVsbG9FbnVtIkAKEUhlbGxvT25lT2ZSZXF1ZXN0Eg8KBWZpcnN0GAEg",
+            "ASgJSAASEAoGc2Vjb25kGAIgASgFSABCCAoGY2hvb3NlIj4KD0hlbGxvT25l",
+            "T2ZSZXBseRIPCgVmaXJzdBgBIAEoCUgAEhAKBnNlY29uZBgCIAEoBUgAQggK",
+            "BmNob29zZSoyCglIZWxsb0VudW0SCAoEWkVSTxAAEgcKA09ORRABEgcKA1RX",
+            "TxACEgkKBVRIUkVFEAMy5AEKB0dyZWV0ZXISPgoIU2F5SGVsbG8SGC5oZWxs",
+            "b3dvcmxkLkhlbGxvUmVxdWVzdBoWLmhlbGxvd29ybGQuSGVsbG9SZXBseSIA",
+            "EkoKDFNheUhlbGxvRW51bRIcLmhlbGxvd29ybGQuSGVsbG9FbnVtUmVxdWVz",
+            "dBoaLmhlbGxvd29ybGQuSGVsbG9FbnVtUmVwbHkiABJNCg1TYXlIZWxsb09u",
+            "ZU9mEh0uaGVsbG93b3JsZC5IZWxsb09uZU9mUmVxdWVzdBobLmhlbGxvd29y",
+            "bGQuSGVsbG9PbmVPZlJlcGx5IgBCDVoLaGVsbG8vaGVsbG9iBnByb3RvMw=="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(new[] {typeof(global::Helloworld.HelloEnum), }, null, new pbr::GeneratedClrTypeInfo[] {
-            new pbr::GeneratedClrTypeInfo(typeof(global::Helloworld.HelloRequest), global::Helloworld.HelloRequest.Parser, new[]{ "Name" }, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Helloworld.HelloReply), global::Helloworld.HelloReply.Parser, new[]{ "Message" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Helloworld.HelloRequest), global::Helloworld.HelloRequest.Parser, new[]{ "Name", "Address" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Helloworld.HelloReply), global::Helloworld.HelloReply.Parser, new[]{ "Message", "Status" }, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Helloworld.HelloEnumRequest), global::Helloworld.HelloEnumRequest.Parser, new[]{ "Enum" }, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Helloworld.HelloEnumReply), global::Helloworld.HelloEnumReply.Parser, new[]{ "Enum" }, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Helloworld.HelloOneOfRequest), global::Helloworld.HelloOneOfRequest.Parser, new[]{ "First", "Second" }, new[]{ "Choose" }, null, null, null),
@@ -97,6 +97,7 @@ namespace Helloworld {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public HelloRequest(HelloRequest other) : this() {
       name_ = other.name_;
+      address_ = other.address_;
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
 
@@ -116,6 +117,17 @@ namespace Helloworld {
       }
     }
 
+    /// <summary>Field number for the "address" field.</summary>
+    public const int AddressFieldNumber = 2;
+    private string address_ = "";
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public string Address {
+      get { return address_; }
+      set {
+        address_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+      }
+    }
+
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public override bool Equals(object other) {
       return Equals(other as HelloRequest);
@@ -130,6 +142,7 @@ namespace Helloworld {
         return true;
       }
       if (Name != other.Name) return false;
+      if (Address != other.Address) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
 
@@ -137,6 +150,7 @@ namespace Helloworld {
     public override int GetHashCode() {
       int hash = 1;
       if (Name.Length != 0) hash ^= Name.GetHashCode();
+      if (Address.Length != 0) hash ^= Address.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
@@ -157,6 +171,10 @@ namespace Helloworld {
         output.WriteRawTag(10);
         output.WriteString(Name);
       }
+      if (Address.Length != 0) {
+        output.WriteRawTag(18);
+        output.WriteString(Address);
+      }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
       }
@@ -170,6 +188,10 @@ namespace Helloworld {
         output.WriteRawTag(10);
         output.WriteString(Name);
       }
+      if (Address.Length != 0) {
+        output.WriteRawTag(18);
+        output.WriteString(Address);
+      }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(ref output);
       }
@@ -181,6 +203,9 @@ namespace Helloworld {
       int size = 0;
       if (Name.Length != 0) {
         size += 1 + pb::CodedOutputStream.ComputeStringSize(Name);
+      }
+      if (Address.Length != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeStringSize(Address);
       }
       if (_unknownFields != null) {
         size += _unknownFields.CalculateSize();
@@ -195,6 +220,9 @@ namespace Helloworld {
       }
       if (other.Name.Length != 0) {
         Name = other.Name;
+      }
+      if (other.Address.Length != 0) {
+        Address = other.Address;
       }
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
@@ -214,6 +242,10 @@ namespace Helloworld {
             Name = input.ReadString();
             break;
           }
+          case 18: {
+            Address = input.ReadString();
+            break;
+          }
         }
       }
     #endif
@@ -230,6 +262,10 @@ namespace Helloworld {
             break;
           case 10: {
             Name = input.ReadString();
+            break;
+          }
+          case 18: {
+            Address = input.ReadString();
             break;
           }
         }
@@ -272,6 +308,7 @@ namespace Helloworld {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public HelloReply(HelloReply other) : this() {
       message_ = other.message_;
+      status_ = other.status_;
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
 
@@ -291,6 +328,17 @@ namespace Helloworld {
       }
     }
 
+    /// <summary>Field number for the "status" field.</summary>
+    public const int StatusFieldNumber = 2;
+    private string status_ = "";
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public string Status {
+      get { return status_; }
+      set {
+        status_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+      }
+    }
+
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public override bool Equals(object other) {
       return Equals(other as HelloReply);
@@ -305,6 +353,7 @@ namespace Helloworld {
         return true;
       }
       if (Message != other.Message) return false;
+      if (Status != other.Status) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
 
@@ -312,6 +361,7 @@ namespace Helloworld {
     public override int GetHashCode() {
       int hash = 1;
       if (Message.Length != 0) hash ^= Message.GetHashCode();
+      if (Status.Length != 0) hash ^= Status.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
@@ -332,6 +382,10 @@ namespace Helloworld {
         output.WriteRawTag(10);
         output.WriteString(Message);
       }
+      if (Status.Length != 0) {
+        output.WriteRawTag(18);
+        output.WriteString(Status);
+      }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
       }
@@ -345,6 +399,10 @@ namespace Helloworld {
         output.WriteRawTag(10);
         output.WriteString(Message);
       }
+      if (Status.Length != 0) {
+        output.WriteRawTag(18);
+        output.WriteString(Status);
+      }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(ref output);
       }
@@ -356,6 +414,9 @@ namespace Helloworld {
       int size = 0;
       if (Message.Length != 0) {
         size += 1 + pb::CodedOutputStream.ComputeStringSize(Message);
+      }
+      if (Status.Length != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeStringSize(Status);
       }
       if (_unknownFields != null) {
         size += _unknownFields.CalculateSize();
@@ -370,6 +431,9 @@ namespace Helloworld {
       }
       if (other.Message.Length != 0) {
         Message = other.Message;
+      }
+      if (other.Status.Length != 0) {
+        Status = other.Status;
       }
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
@@ -389,6 +453,10 @@ namespace Helloworld {
             Message = input.ReadString();
             break;
           }
+          case 18: {
+            Status = input.ReadString();
+            break;
+          }
         }
       }
     #endif
@@ -405,6 +473,10 @@ namespace Helloworld {
             break;
           case 10: {
             Message = input.ReadString();
+            break;
+          }
+          case 18: {
+            Status = input.ReadString();
             break;
           }
         }

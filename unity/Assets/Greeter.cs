@@ -86,6 +86,59 @@ namespace Helloworld
             __Marshaller_helloworld_HelloOneOfRequest,
             __Marshaller_helloworld_HelloOneOfReply);
 
+
+        // request degraded
+        [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+        static readonly grpc::Marshaller<global::Helloworld.RequestDegraded.HelloRequest> __Marshaller_helloworld_HelloRequest_RequestDegraded = grpc::Marshallers.Create(__Helper_SerializeMessage, context => __Helper_DeserializeMessage(context, global::Helloworld.RequestDegraded.HelloRequest.Parser));
+        [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+        static readonly grpc::Marshaller<global::Helloworld.RequestDegraded.HelloReply> __Marshaller_helloworld_HelloReply_RequestDegraded = grpc::Marshallers.Create(__Helper_SerializeMessage, context => __Helper_DeserializeMessage(context, global::Helloworld.RequestDegraded.HelloReply.Parser));
+        [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+        static readonly grpc::Method<global::Helloworld.RequestDegraded.HelloRequest, global::Helloworld.RequestDegraded.HelloReply> __Method_SayHello_RequestDegraded = new grpc::Method<global::Helloworld.RequestDegraded.HelloRequest, global::Helloworld.RequestDegraded.HelloReply>(
+            grpc::MethodType.Unary,
+            __ServiceName,
+            "SayHello",
+            __Marshaller_helloworld_HelloRequest_RequestDegraded,
+            __Marshaller_helloworld_HelloReply_RequestDegraded);
+
+        // request advanced
+        [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+        static readonly grpc::Marshaller<global::Helloworld.RequestAdvanced.HelloRequest> __Marshaller_helloworld_HelloRequest_RequestAdvanced = grpc::Marshallers.Create(__Helper_SerializeMessage, context => __Helper_DeserializeMessage(context, global::Helloworld.RequestAdvanced.HelloRequest.Parser));
+        [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+        static readonly grpc::Marshaller<global::Helloworld.RequestAdvanced.HelloReply> __Marshaller_helloworld_HelloReply_RequestAdvanced = grpc::Marshallers.Create(__Helper_SerializeMessage, context => __Helper_DeserializeMessage(context, global::Helloworld.RequestAdvanced.HelloReply.Parser));
+        [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+        static readonly grpc::Method<global::Helloworld.RequestAdvanced.HelloRequest, global::Helloworld.RequestAdvanced.HelloReply> __Method_SayHello_RequestAdvanced = new grpc::Method<global::Helloworld.RequestAdvanced.HelloRequest, global::Helloworld.RequestAdvanced.HelloReply>(
+            grpc::MethodType.Unary,
+            __ServiceName,
+            "SayHello",
+            __Marshaller_helloworld_HelloRequest_RequestAdvanced,
+            __Marshaller_helloworld_HelloReply_RequestAdvanced);
+
+        // response degraded
+        [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+        static readonly grpc::Marshaller<global::Helloworld.ResponseDegraded.HelloRequest> __Marshaller_helloworld_HelloRequest_ResponseDegraded = grpc::Marshallers.Create(__Helper_SerializeMessage, context => __Helper_DeserializeMessage(context, global::Helloworld.ResponseDegraded.HelloRequest.Parser));
+        [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+        static readonly grpc::Marshaller<global::Helloworld.ResponseDegraded.HelloReply> __Marshaller_helloworld_HelloReply_ResponseDegraded = grpc::Marshallers.Create(__Helper_SerializeMessage, context => __Helper_DeserializeMessage(context, global::Helloworld.ResponseDegraded.HelloReply.Parser));
+        [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+        static readonly grpc::Method<global::Helloworld.ResponseDegraded.HelloRequest, global::Helloworld.ResponseDegraded.HelloReply> __Method_SayHello_ResponseDegraded = new grpc::Method<global::Helloworld.ResponseDegraded.HelloRequest, global::Helloworld.ResponseDegraded.HelloReply>(
+            grpc::MethodType.Unary,
+            __ServiceName,
+            "SayHello",
+            __Marshaller_helloworld_HelloRequest_ResponseDegraded,
+            __Marshaller_helloworld_HelloReply_ResponseDegraded);
+
+        // response advanced
+        [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+        static readonly grpc::Marshaller<global::Helloworld.ResponseAdvanced.HelloRequest> __Marshaller_helloworld_HelloRequest_ResponseAdvanced = grpc::Marshallers.Create(__Helper_SerializeMessage, context => __Helper_DeserializeMessage(context, global::Helloworld.ResponseAdvanced.HelloRequest.Parser));
+        [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+        static readonly grpc::Marshaller<global::Helloworld.ResponseAdvanced.HelloReply> __Marshaller_helloworld_HelloReply_ResponseAdvanced = grpc::Marshallers.Create(__Helper_SerializeMessage, context => __Helper_DeserializeMessage(context, global::Helloworld.ResponseAdvanced.HelloReply.Parser));
+        [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+        static readonly grpc::Method<global::Helloworld.ResponseAdvanced.HelloRequest, global::Helloworld.ResponseAdvanced.HelloReply> __Method_SayHello_ResponseAdvanced = new grpc::Method<global::Helloworld.ResponseAdvanced.HelloRequest, global::Helloworld.ResponseAdvanced.HelloReply>(
+            grpc::MethodType.Unary,
+            __ServiceName,
+            "SayHello",
+            __Marshaller_helloworld_HelloRequest_ResponseAdvanced,
+            __Marshaller_helloworld_HelloReply_ResponseAdvanced);
+
         /// <summary>Service descriptor</summary>
         public static global::Google.Protobuf.Reflection.ServiceDescriptor Descriptor
         {
@@ -212,6 +265,48 @@ namespace Helloworld
             protected override GreeterClient NewInstance(ClientBaseConfiguration configuration)
             {
                 return new GreeterClient(configuration);
+            }
+
+
+            [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+            public virtual global::Helloworld.RequestDegraded.HelloReply SayHelloRequestDegraded(global::Helloworld.RequestDegraded.HelloRequest request, grpc::Metadata headers = null, global::System.DateTime? deadline = null, global::System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+            {
+                return SayHelloRequestDegraded(request, new grpc::CallOptions(headers, deadline, cancellationToken));
+            }
+            [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+            public virtual global::Helloworld.RequestDegraded.HelloReply SayHelloRequestDegraded(global::Helloworld.RequestDegraded.HelloRequest request, grpc::CallOptions options)
+            {
+                return CallInvoker.BlockingUnaryCall(__Method_SayHello_RequestDegraded, null, options, request);
+            }
+            [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+            public virtual global::Helloworld.RequestAdvanced.HelloReply SayHelloRequestAdvanced(global::Helloworld.RequestAdvanced.HelloRequest request, grpc::Metadata headers = null, global::System.DateTime? deadline = null, global::System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+            {
+                return SayHelloRequestAdvanced(request, new grpc::CallOptions(headers, deadline, cancellationToken));
+            }
+            [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+            public virtual global::Helloworld.RequestAdvanced.HelloReply SayHelloRequestAdvanced(global::Helloworld.RequestAdvanced.HelloRequest request, grpc::CallOptions options)
+            {
+                return CallInvoker.BlockingUnaryCall(__Method_SayHello_RequestAdvanced, null, options, request);
+            }
+            [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+            public virtual global::Helloworld.ResponseDegraded.HelloReply SayHelloResponseDegraded(global::Helloworld.ResponseDegraded.HelloRequest request, grpc::Metadata headers = null, global::System.DateTime? deadline = null, global::System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+            {
+                return SayHelloResponseDegraded(request, new grpc::CallOptions(headers, deadline, cancellationToken));
+            }
+            [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+            public virtual global::Helloworld.ResponseDegraded.HelloReply SayHelloResponseDegraded(global::Helloworld.ResponseDegraded.HelloRequest request, grpc::CallOptions options)
+            {
+                return CallInvoker.BlockingUnaryCall(__Method_SayHello_ResponseDegraded, null, options, request);
+            }
+            [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+            public virtual global::Helloworld.ResponseAdvanced.HelloReply SayHelloResponseAdvanced(global::Helloworld.ResponseAdvanced.HelloRequest request, grpc::Metadata headers = null, global::System.DateTime? deadline = null, global::System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+            {
+                return SayHelloResponseAdvanced(request, new grpc::CallOptions(headers, deadline, cancellationToken));
+            }
+            [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+            public virtual global::Helloworld.ResponseAdvanced.HelloReply SayHelloResponseAdvanced(global::Helloworld.ResponseAdvanced.HelloRequest request, grpc::CallOptions options)
+            {
+                return CallInvoker.BlockingUnaryCall(__Method_SayHello_ResponseAdvanced, null, options, request);
             }
         }
 

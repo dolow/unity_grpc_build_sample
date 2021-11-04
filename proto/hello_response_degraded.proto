@@ -1,0 +1,18 @@
+syntax = "proto3";
+
+option go_package = "hello/hello";
+
+package helloworld.response_degraded;
+
+service Greeter {
+  rpc SayHello (HelloRequest) returns (HelloReply) {}
+}
+
+message HelloRequest {
+  string name = 1;
+  string address = 2;
+}
+
+message HelloReply {
+  string message = 1;
+}
